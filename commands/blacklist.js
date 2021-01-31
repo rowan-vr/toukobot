@@ -9,14 +9,16 @@ module.exports = {
             message.author.send('Currently the following words are blaclisted: ' + blacklistedWords.join(", "))
             message.reply('The blacklist is send in your DMs!')
         } else if (args[0] == 'add') {
-            blacklistedWords.push(args[1])
+            args.shift()
+            blacklistedWords.push(args.join(" "))
             fs.writeFileSync('./blacklist.txt', blacklistedWords.join(","), (err) => {
                 if (err) message.channel.send(`An error occured! \`${err}\``)
             })
             message.channel.send(`Word successfully added to the blacklist!`)
         } else if (args[0] == 'remove') {
-            if (blacklistedWords.includes(args[1])) {
-                const index = blacklistedWords.indexOf(args[1]);
+            args.shift()
+            if (blacklistedWords.includes(args.join(" "))) {
+                const index = blacklistedWords.indexOf(args.join(" "));
                 if (index > -1) {
                     blacklistedWords.splice(index, 1);
                 }

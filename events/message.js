@@ -1,6 +1,6 @@
 const fs = require('fs')
 module.exports = (client, message) => {
-    if (new RegExp(fs.readFileSync('./blacklist.txt', 'utf8').split(',').join("|")).test(message) && !message.content.includes('touko!blacklist remove') && message.channel.type !== 'dm') {
+    if (new RegExp(fs.readFileSync('./blacklist.txt', 'utf8').split(',').join("|")).test(message.content.toLowerCase()) && !message.content.includes('touko!blacklist remove') && message.channel.type !== 'dm') {
         message.delete();
     }
     if (message.author.bot || message.channel.type === 'dm') return;
