@@ -1,9 +1,9 @@
 const fs = require('fs')
 module.exports = (client, message) => {
-    if (new RegExp(fs.readFileSync('./blacklist.txt', 'utf8').split(',').join("|")).test(message) && !message.content.includes('touko!blacklist remove')) {
+    if (new RegExp(fs.readFileSync('./blacklist.txt', 'utf8').split(',').join("|")).test(message) && !message.content.includes('touko!blacklist remove') && message.channel.type !== 'dm') {
         message.delete();
     }
-    if (message.author.bot) return;
+    if (message.author.bot || message.channel.type === 'dm') return;
     if (message.content.toLocaleLowerCase().indexOf(client.config.prefix) !== 0) return;
 
     const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);

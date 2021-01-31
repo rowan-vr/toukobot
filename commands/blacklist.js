@@ -3,7 +3,7 @@ module.exports = {
     name: 'blacklist',
     description: 'Manage the server blacklist',
     execute(client, message, args) {
-        if (!message.member.guild.me.hasPermission('MANAGE SERVER')) return message.reply('You need the `MANAGE SERVER` permission to use this command!');
+        if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You need the `ADMINISTRATOR` permission to use this command!');
         let blacklistedWords = fs.readFileSync('./blacklist.txt', 'utf8').split(',')
         if (args[0] == 'list') {
             message.author.send('Currently the following words are blaclisted: ' + blacklistedWords.join(", "))
