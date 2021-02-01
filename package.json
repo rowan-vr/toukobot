@@ -2,7 +2,7 @@
   "name": "rosterbot",
   "version": "1.0.0",
   "description": "Discord bot that makes rosters",
-  "main": "index.js",
+  "main": "toukobot.js",
   "dependencies": {
     "discord.js": "^12.3.1",
     "enmap": "^5.8.0"
