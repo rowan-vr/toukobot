@@ -4,16 +4,16 @@
   "description": "Discord bot that makes rosters",
   "main": "toukobot.js",
   "dependencies": {
-    "discord.js": "^12.3.1",
-    "enmap": "^5.8.0"
+    "@discordjs/rest": "^1.1.0",
+    "discord.js": "^14.3.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "node deploy-commands.js",
+    "start": "node toukobot.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TippieCodes/RosterBot.git"
+    "url": "git+https://github.com/rowan-vr/toukobot.git"
   },
   "keywords": [
     "discord",

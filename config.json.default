@@ -1,5 +1,7 @@
 {
   "token": "insert-bot-token-here",
   "prefix": "touko!",
-  "ownerID": "your-user-ID"
+  "ownerId": "your-user-ID",
+  "clientId": "Your client ID",
+  "guildId": "Your guild ID"
 }
