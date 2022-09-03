@@ -28,7 +28,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 
 rest.put(
     Routes.applicationGuildCommands(clientId, guildId),
-    {body:[blacklist.toJSON(), eval]}
+    {body:[blacklist.toJSON()]}
 ).then(res => console.log(`Deploy completed! Added ${res.length} commands`))
 
 
